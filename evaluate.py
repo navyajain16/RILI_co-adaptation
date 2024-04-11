@@ -12,7 +12,7 @@ parser.add_argument('--resume', default="None")
 parser.add_argument('--change_partner', type=float, default=0.99)
 parser.add_argument('--batch_size', type=int, default=50)
 parser.add_argument('--save_name')
-parser.add_argument('--start_eps', type=int, default=100)
+parser.add_argument('--start_eps', type=int, default=50)
 parser.add_argument('--num_eps', type=int, default=30000)
 args = parser.parse_args()
 
@@ -29,7 +29,7 @@ memory = ReplayMemory(capacity=args.num_eps, interaction_length=env._max_episode
 
 # Resume Training
 if args.resume != "None":
-    agent.load_model(args.resume)
+    agent.load_model('/workspaces/RILI_co-adaptation/models/rili/experiment1/run_25300.pt')
     memory.load_buffer(args.resume)
     args.start_eps = 0
 

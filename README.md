@@ -28,7 +28,9 @@ cd ..
 ## Instructions
 To train the RILI model with the _Circle_ environment, run the following:
 
+
 `python3 main.py --env-name rili-circle-v0 --save_name []`
+
 
 You can train the model in different environments using the `--env-name` argument. It has the following
 values:

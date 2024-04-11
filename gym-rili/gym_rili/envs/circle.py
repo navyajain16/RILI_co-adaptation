@@ -79,8 +79,11 @@ class Circle(gym.Env):
             # No influence
             if self.partner == 3:
                 self.theta -= np.pi/2
+            
+            #print('theta',self.theta)
 
             self.ego = np.copy(ego_home)
             self.other = self.polar(self.theta)
+            #print('other',self.other)
         return self._get_obs(), reward, done, {}
 
